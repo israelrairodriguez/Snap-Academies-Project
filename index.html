@@ -1,31 +1,58 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>LA TV Shows | Home</title>
-    <meta name="description" content="A Catalog of Shows Set in Los Angeles" />
+    <title>Davis Pets | Home </title>
+    <meta name="description" content="A catalog of UC Davis Pets" />
     <link rel="stylesheet" href="style.css" />
-    <script type="text/javascript" src="scripts.js"></script>
   </head>
 
   <body>
     <header class="main-header">
-      <h1 class="title">LA TV Shows</h1>
+      <h1 class="title">UC Davis Campus Pets</h1>
     </header>
     <div id="card-container"></div>
     <div class="card" style="display: none">
       <div class="card-content">
-        <h2>TV Show Title</h2>
-        <img src="" alt="TV Show Poster" />
+        <h2>Pet Name</h2>
+        <img src="" alt="UC Davis Pet" />
         <ul>
           <li>Bullet Point 1</li>
-          <li>Bullet Point 2</li>
-          <li>Bullet Point 3</li>
         </ul>
+        <p>Click to learn more!</p>
       </div>
     </div>
     <div class="footer">
-      <button onclick="quoteAlert();">Get A Quote!</button>
-      <button onclick="removeLastCard();">Remove A Card!</button>
+      <button id="open-form-btn">Add a pet</button>
+      <button id="delete-mode-btn">Delete Mode</button>
     </div>
+    <div id="pet-form-overlay" style ="display: none;" class="form-overlay">
+      <div class="form-container">
+        <button id="close-form-btn" class="close-form">&times;</button>
+        <h2>Suggest your pet!</h2>
+        <form id="pet-form">
+          <input type="text" id="pet-name" placeholder="Pet Name" required/>
+          <input type="url" id="pet-image" placeholder="Card Image URL" required />
+          <textarea id="pet-facts" placeholder="Facts (comma separated)" required></textarea>
+          <textarea id="pet-description" placeholder="paragraphs (separate with |)" required></textarea>
+          <textarea id="pet-photos" placeholder="Photo URL (comma separated)" required></textarea>
+          <button type="submit">Add Pet</button>
+        </form>
+      </div>
+    </div>
+    <div id="overlay" style="display: none;">
+      <div id="overlay-content">
+        <button id="close-overlay">&times;</button>
+        <h2 id="overlay-title"></h2>
+        <div id="carousel">
+          <button id="prev">&lt;</button>
+          <img id="carousel-image" src="" alt="Pet Photos">
+          <button id="next">&gt;</button>
+        </div>
+        <ul id="overlay-facts"></ul>
+        <p id="overlay-paragraph"></p>
+      </div>
+    </div>
+    
+    <script type ="text/javascript" src = "scripts.js"></script>
   </body>
 </html>
